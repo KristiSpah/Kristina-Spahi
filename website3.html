@@ -1,0 +1,399 @@
+ 
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <style>
+           body {
+               font-family: 'Arial', sans-serif;
+               margin: 0;
+               padding: 0;
+               background-color: #121111; /* Dark blue background */
+               color: #fff; /* White text */
+           }
+           html, body {
+        scroll-behavior: smooth;
+    }
+           header {
+               background-color: #4a90e2;
+               color: #fff;
+               text-align: center;
+               padding: 20px;
+               transition: background-color 0.5s ease;
+           }
+   
+           header:hover {
+               background-color: #1e4679;
+           }
+   
+           h1 {
+               font-size: 2.5em;
+               margin-bottom: 10px;
+           }
+   
+           p {
+               font-size: 1.2em;
+           }
+   
+           .logo {
+               max-width: 80px;
+               border-radius: 50%;
+           }
+   
+           .intro {
+               display: flex;
+               justify-content: space-between;
+               align-items: center;
+               text-align: center;
+               margin: 20px;
+           }
+   
+           .profile-photo {
+               max-width: 30%;
+               height: auto;
+               border-radius: 50%;
+               box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+           }
+   
+           .bio {
+               width: 60%;
+           }
+   
+           .experience-cards {
+               display: flex;
+               justify-content: space-between;
+           }
+   
+           .experience-card {
+               width: 48%; /* Adjust as needed */
+           }
+   
+           .dynamic-element {
+               display: inline-block;
+               padding: 10px;
+               background-color: #333;
+               color: #fff;
+               cursor: pointer;
+               border-radius: 5px;
+               transition: transform 0.3s ease;
+           }
+   
+           .dynamic-element:hover {
+               transform: scale(1.1);
+           }
+   
+           .services {
+               display: flex;
+               justify-content: space-between;
+           }
+   
+           .service-container {
+               width: 100%;
+               float: left;
+               clear: left;
+           }
+   
+           .service {
+               text-align: left;
+               margin-bottom: 20px;
+           }
+   
+           .service img {
+               max-width: 100%;
+               border-radius: 8px;
+               box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+           }
+   
+           .service p {
+               font-size: 1.1em;
+               text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+           }
+   
+           /* Added styles for white background on sections and left alignment */
+           section {
+               background-color: #fff;
+               color: #333;
+               padding: 50px;
+               margin: 20px;
+               width: 60%; /* Adjust as needed */
+               float: left;
+               clear: left;
+               text-align: left;
+           }
+   
+           .project {
+               margin-bottom: 40px;
+               padding: 20px;
+               border: 1px solid #ddd;
+               border-radius: 8px;
+               background-color: #fff;
+               box-shadow: 0 4px 8px rgba(235, 43, 33, 0.1);
+               transition: transform 0.3s ease;
+           }
+   
+           .project:hover {
+               transform: scale(1.05);
+               box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+           }
+   
+           .project h3 {
+               font-size: 1.8em;
+               color: #333;
+               margin-bottom: 10px;
+           }
+   
+           .project p {
+               font-size: 1.2em;
+               color: #666;
+           }
+   
+           /* Additional styles for the project details */
+           .project-details {
+               display: none;
+               margin-top: 20px;
+               padding: 10px;
+               background-color: #f9f9f9;
+               border: 1px solid #ccc;
+               border-radius: 4px;
+           }
+   
+           /* Style for the "View Details" link */
+           .project-details-link {
+               cursor: pointer;
+               color: #e83b20;
+           }
+   
+           .project-details-link:hover {
+               text-decoration: underline;
+           }
+   
+           nav {
+               float: right;
+               clear: right;
+           }
+   
+           /* Additional styles for the form */
+           #contact {
+               text-align: center;
+           }
+   
+           form {
+               max-width: 600px;
+               margin: 0 auto;
+           }
+   
+           .form-group {
+               margin-bottom: 20px;
+           }
+   
+           label {
+               display: block;
+               margin-bottom: 5px;
+               font-size: 1.2em;
+           }
+   
+           input,
+           textarea {
+               width: 100%;
+               padding: 10px;
+               font-size: 1em;
+               border: 1px solid #bcb6b6;
+               border-radius: 5px;
+               margin-top: 5px;
+           }
+   
+           button {
+               background-color: #3189ee;
+               color: #9f9a9a;
+               padding: 10px 20px;
+               font-size: 1.2em;
+               border: none;
+               border-radius: 5px;
+               cursor: pointer;
+               transition: background-color 0.3s ease;
+           }
+   
+           button:hover {
+               background-color: #f3847a;
+           }
+   
+           /* Responsive styles for smaller screens */
+           @media (max-width: 768px) {
+               header, .intro, section, nav {
+                   width: 100%;
+                   float: none;
+                   clear: both;
+               }
+           }
+   
+           .butonat a {
+               color: #ef6e6e; /* Default color */
+               text-decoration: none;
+               padding: 10px;
+               transition: color 0.3s ease;
+           }
+   
+           .butonat a:hover {
+               color: #a29c9b; /* Change color on hover */
+           }
+           .emra
+           {
+              color: #ccc;
+              font-family: 'Courier New', Courier, monospace;
+           }
+       </style>
+   
+       <title>Kristina Spahi's Portfolio</title>
+   </head>
+   <body>
+   
+       <header>
+           <img src="KS.jpg" alt="Your Logo" class="logo">
+           <h1>Kristina Spahi</h1>
+           <p>Web Developer</p>
+       </header>
+   
+       <nav class="butonat">
+           <a href="#about">About Me</a>
+           <a href="#services">Services</a>
+           <a href="#projects">Projects</a>
+           <a href="#contact">Contact</a>
+           <a herf="#weather app">Weather App</a>
+       </nav>
+   
+       <section id="about">
+           <h2>About Me</h2>
+           <div class="intro">
+               <div class="bio">
+                   <p>Pershendetje! Unë jam Kristina Spahi dhe ndjek studimet në Universitetin Metropolitan. Web development është pasioni im, dhe mundësia e ndarjes së informacionit ose ideve për gjëra të reja më tërheq. Kam ndjekur një studim të hollësishëm në Javascript dhe React me një mbrojtje rreth 56%. Si hobi personal, më pëlqen tenisi.</p>
+               </div>
+               <img src="foto.jpg" alt="Kristina Spahi's Photo" class="profile-photo">
+           </div>
+           <div class="experience-cards">
+               <div class="experience-card">
+                   <h3>Experience 1</h3>
+                   <p>Eksperiencë njëvjeçare në Metropol. Kjo përshkruan ndikimin e teknologjisë në mosgatishmërinë e fëmijëve në shkollë. Përmes këtij trajnimi kam asistuar në shkollën 9-vjeçare "Asim Vokli", për të larguar fëmijët për disa orë nga pajisjet teknologjike. Mbrojtja e saj është 76%.</p>
+               </div>
+               <div class="experience-card">
+                   <h3>Experience 2</h3>
+                   <p>Mundësia në Machine Learning. Projekt 3-mujor në Kroaci, deri më tani ka arritur futjen e kësaj metode të machine learning në kriminalistikë.</p>
+               </div>
+           </div>
+       </section>
+   
+       <section id="services">
+           <h2>Services</h2>
+           <div class="services">
+               <div class="service-container">
+                   <div class="service">
+                       <img src="download.jpg" alt="Service 1">
+                       <p>"Me një përqendrim të theksuar në dizajn dhe zhvillim të faqeve të internetit, unë ofroj shërbime të specializuara për të krijuar një përvojë të paharrueshme për përdoruesit. Përdorimi i teknologjive të fundit front-end si HTML, CSS dhe JavaScript siguron një platformë të qëndrueshme dhe moderne për faqen tuaj. Dizajni i përshtatshëm dhe i avancuar është i përqendruar në sigurimin e një prezantimi tërheqës dhe të shfletueshëm për audiencën tuaj. Me angazhimin tim në çdo projekt, synoj të sjell një faqe të internetit që jo vetëm përmbush nevojat teknike, por gjithashtu bën një impakt vizual dhe funksional për të ndërthurur një përvojë të jashtëzakonshme për përdoruesit tuaj."</p>
+                   </div>
+                   <div class="service">
+                       <img src="OIP.jpg" alt="Service 2">
+                       <p>Optimizimi i faqes së internetit përfshin përmirësimet teknike dhe strategjitë për të rritur shpejtësinë, efikasitetin dhe përvojën e përdoruesve. Kjo përfshin redaktimin e kodit, optimizimin e imazheve, përdorimin e shërbyesve të shpejtësive dhe strategjitë e ngarkimit të paketuar për të bërë faqen më efikase dhe tërheqëse për vizitorët.</p>
+                   </div>
+               </div>
+               <!-- Add more services as needed -->
+           </div>
+       </section>
+   
+       <section id="projects">
+           <h2>Projects</h2>
+           <!-- Add your project details here -->
+           <div class="project" onclick="viewProjectDetails('Project 1')">
+               <h3>Paradise Of the Drin</h3>
+               <p>Nje projekt ne Html,Css ne te cilet tregohet pamja e Drint.Kjo 
+                   faqe permban d2 dive ne te cilen ne njerin kemi vendosur nje dlisebar qe permban 
+                   home,activity edit,si ikona dhe funksionalitetet e tyre nepermjet JavaSCript,dhe ne divin tjeter
+                    i cili eshte vertikal kemi ikonat e facebookut,emailit dhe linkediit per te gjetur me tepe informacion nepermjet
+                    ketyre platformave.
+               </p>
+           </div>
+            
+       </section>
+   
+       <section id="contact">
+           <h2>Contact Me</h2>
+           <form id="contact-form" onsubmit="validateForm(event)">
+               <div class="form-group">
+                   <label for="name">Name:</label>
+                   <input type="text" id="name" name="name" required>
+               </div>
+   
+               <div class="form-group">
+                  <label for="phone">Phone:</label>
+                  <input type="tel" id="phone" name="phone" required>
+              </div>
+              
+   
+               <div class="form-group">
+                   <label for="message">Message:</label>
+                   <textarea id="message" name="message" required></textarea>
+               </div>
+   
+               <button type="submit" onclick="validateForm(event)">Send Message</button>
+
+           </form>
+       </section>
+     
+       <footer class="emra">
+           <p>Email:spahikristi26@gmail.com</p>
+           <p>Phone:(+355)0693926169</p>
+           <p>Linkedin:Kristi_Spahi</p>
+       </footer>
+   
+       <script>
+             
+      function viewProjectDetails(projectName) {
+          // Add logic to handle project details view
+          alert('View details for ' + projectName);
+      }
+  
+      function validateForm(event) {
+        // Add JavaScript validation logic here
+        var name = document.getElementById('name').value.trim();
+        var phone = document.getElementById('phone').value.trim();
+        var message = document.getElementById('message').value;
+
+        // Check if the name is not empty
+        if (name === '') {
+            alert('Name cannot be empty.');
+            return false;
+        }
+
+        // Check if the phone number starts with '+355'
+        if (!phone.startsWith('+355')) {
+            alert('Phone number should start with +355.');
+            return false;
+        }
+
+        // Check if the message has more than 5 words
+        if (message.split(/\s+/).length < 5) {
+            alert('Message should have more than 5 words.');
+            return false;
+        }
+
+        // Display success message and allow the form submission
+        alert('Form submitted successfully!');
+        return true;
+    }
+    function validateForm() {
+    event.preventDefault(); // Prevent the default form submission
+
+    alert('Form submitted successfully!');
+
+    return true; // Allow the form submission if validation passes
+}
+
+      function animateElement() {
+          var element = document.querySelector('.dynamic-element');
+          element.style.backgroundColor = '#ff6347'; // Change color on click
+      }
+   
+  
+       </script>
+   
+   </body>
+   </html>
